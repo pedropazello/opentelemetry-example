@@ -1,8 +1,14 @@
 package main
 
+import "fmt"
+
 func Fibonacci(n uint) (uint64, error) {
 	if n <= 1 {
 		return uint64(n), nil
+	}
+
+	if n > 93 {
+		return 0, fmt.Errorf("unsupported n: %d", n)
 	}
 
 	var n2, n1 uint64 = 0, 1

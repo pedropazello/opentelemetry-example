@@ -1,15 +1,15 @@
 {
 	"Name": "Poll",
 	"SpanContext": {
-		"TraceID": "b238c191a52f69e4f6af3ad532e68688",
-		"SpanID": "950bd7053c65f0c2",
+		"TraceID": "69c504420b5066edbf3aa1c4384b3083",
+		"SpanID": "a73a34465d97744e",
 		"TraceFlags": "01",
 		"TraceState": "",
 		"Remote": false
 	},
 	"Parent": {
-		"TraceID": "b238c191a52f69e4f6af3ad532e68688",
-		"SpanID": "94471e86738dc01c",
+		"TraceID": "69c504420b5066edbf3aa1c4384b3083",
+		"SpanID": "0b625b98f579ab56",
 		"TraceFlags": "01",
 		"TraceState": "",
 		"Remote": false
@@ -22,7 +22,7 @@
 			"Key": "request.n",
 			"Value": {
 				"Type": "STRING",
-				"Value": "42"
+				"Value": "100"
 			}
 		}
 	],
@@ -89,15 +89,15 @@
 {
 	"Name": "Fibonacci",
 	"SpanContext": {
-		"TraceID": "b238c191a52f69e4f6af3ad532e68688",
-		"SpanID": "01f2ce9b0971ecdf",
+		"TraceID": "69c504420b5066edbf3aa1c4384b3083",
+		"SpanID": "fb5d6d1b039964e2",
 		"TraceFlags": "01",
 		"TraceState": "",
 		"Remote": false
 	},
 	"Parent": {
-		"TraceID": "b238c191a52f69e4f6af3ad532e68688",
-		"SpanID": "07db11b57389167a",
+		"TraceID": "69c504420b5066edbf3aa1c4384b3083",
+		"SpanID": "e5704801d8cc1ac8",
 		"TraceFlags": "01",
 		"TraceState": "",
 		"Remote": false
@@ -106,11 +106,33 @@
 	"StartTime": "0001-01-01T00:00:00Z",
 	"EndTime": "0001-01-01T00:00:00Z",
 	"Attributes": null,
-	"Events": null,
+	"Events": [
+		{
+			"Name": "exception",
+			"Attributes": [
+				{
+					"Key": "exception.type",
+					"Value": {
+						"Type": "STRING",
+						"Value": "*errors.errorString"
+					}
+				},
+				{
+					"Key": "exception.message",
+					"Value": {
+						"Type": "STRING",
+						"Value": "unsupported n: 100"
+					}
+				}
+			],
+			"DroppedAttributeCount": 0,
+			"Time": "0001-01-01T00:00:00Z"
+		}
+	],
 	"Links": null,
 	"Status": {
-		"Code": "Unset",
-		"Description": ""
+		"Code": "Error",
+		"Description": "unsupported n: 100"
 	},
 	"DroppedAttributes": 0,
 	"DroppedEvents": 0,
@@ -169,15 +191,15 @@
 {
 	"Name": "Write",
 	"SpanContext": {
-		"TraceID": "b238c191a52f69e4f6af3ad532e68688",
-		"SpanID": "07db11b57389167a",
+		"TraceID": "69c504420b5066edbf3aa1c4384b3083",
+		"SpanID": "e5704801d8cc1ac8",
 		"TraceFlags": "01",
 		"TraceState": "",
 		"Remote": false
 	},
 	"Parent": {
-		"TraceID": "b238c191a52f69e4f6af3ad532e68688",
-		"SpanID": "94471e86738dc01c",
+		"TraceID": "69c504420b5066edbf3aa1c4384b3083",
+		"SpanID": "0b625b98f579ab56",
 		"TraceFlags": "01",
 		"TraceState": "",
 		"Remote": false
@@ -249,8 +271,8 @@
 {
 	"Name": "Run",
 	"SpanContext": {
-		"TraceID": "b238c191a52f69e4f6af3ad532e68688",
-		"SpanID": "94471e86738dc01c",
+		"TraceID": "69c504420b5066edbf3aa1c4384b3083",
+		"SpanID": "0b625b98f579ab56",
 		"TraceFlags": "01",
 		"TraceState": "",
 		"Remote": false
@@ -259,6 +281,334 @@
 		"TraceID": "00000000000000000000000000000000",
 		"SpanID": "0000000000000000",
 		"TraceFlags": "00",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "0001-01-01T00:00:00Z",
+	"EndTime": "0001-01-01T00:00:00Z",
+	"Attributes": null,
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 2,
+	"Resource": [
+		{
+			"Key": "environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "demo"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "opentelemetry-example"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "v0.0.1"
+			}
+		},
+		{
+			"Key": "telemetry.sdk.language",
+			"Value": {
+				"Type": "STRING",
+				"Value": "go"
+			}
+		},
+		{
+			"Key": "telemetry.sdk.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "opentelemetry"
+			}
+		},
+		{
+			"Key": "telemetry.sdk.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.3.0"
+			}
+		}
+	],
+	"InstrumentationLibrary": {
+		"Name": "opentelemetry-example",
+		"Version": "",
+		"SchemaURL": ""
+	}
+}
+{
+	"Name": "Poll",
+	"SpanContext": {
+		"TraceID": "69c504420b5066edbf3aa1c4384b3083",
+		"SpanID": "020cc1c83cf13cd6",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "69c504420b5066edbf3aa1c4384b3083",
+		"SpanID": "899a5cf84716e383",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "0001-01-01T00:00:00Z",
+	"EndTime": "0001-01-01T00:00:00Z",
+	"Attributes": [
+		{
+			"Key": "request.n",
+			"Value": {
+				"Type": "STRING",
+				"Value": "93"
+			}
+		}
+	],
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 0,
+	"Resource": [
+		{
+			"Key": "environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "demo"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "opentelemetry-example"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "v0.0.1"
+			}
+		},
+		{
+			"Key": "telemetry.sdk.language",
+			"Value": {
+				"Type": "STRING",
+				"Value": "go"
+			}
+		},
+		{
+			"Key": "telemetry.sdk.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "opentelemetry"
+			}
+		},
+		{
+			"Key": "telemetry.sdk.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.3.0"
+			}
+		}
+	],
+	"InstrumentationLibrary": {
+		"Name": "opentelemetry-example",
+		"Version": "",
+		"SchemaURL": ""
+	}
+}
+{
+	"Name": "Fibonacci",
+	"SpanContext": {
+		"TraceID": "69c504420b5066edbf3aa1c4384b3083",
+		"SpanID": "66aab221b3a05978",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "69c504420b5066edbf3aa1c4384b3083",
+		"SpanID": "76f635ebf81ca44c",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "0001-01-01T00:00:00Z",
+	"EndTime": "0001-01-01T00:00:00Z",
+	"Attributes": null,
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 0,
+	"Resource": [
+		{
+			"Key": "environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "demo"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "opentelemetry-example"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "v0.0.1"
+			}
+		},
+		{
+			"Key": "telemetry.sdk.language",
+			"Value": {
+				"Type": "STRING",
+				"Value": "go"
+			}
+		},
+		{
+			"Key": "telemetry.sdk.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "opentelemetry"
+			}
+		},
+		{
+			"Key": "telemetry.sdk.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.3.0"
+			}
+		}
+	],
+	"InstrumentationLibrary": {
+		"Name": "opentelemetry-example",
+		"Version": "",
+		"SchemaURL": ""
+	}
+}
+{
+	"Name": "Write",
+	"SpanContext": {
+		"TraceID": "69c504420b5066edbf3aa1c4384b3083",
+		"SpanID": "76f635ebf81ca44c",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "69c504420b5066edbf3aa1c4384b3083",
+		"SpanID": "899a5cf84716e383",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "0001-01-01T00:00:00Z",
+	"EndTime": "0001-01-01T00:00:00Z",
+	"Attributes": null,
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 1,
+	"Resource": [
+		{
+			"Key": "environment",
+			"Value": {
+				"Type": "STRING",
+				"Value": "demo"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "opentelemetry-example"
+			}
+		},
+		{
+			"Key": "service.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "v0.0.1"
+			}
+		},
+		{
+			"Key": "telemetry.sdk.language",
+			"Value": {
+				"Type": "STRING",
+				"Value": "go"
+			}
+		},
+		{
+			"Key": "telemetry.sdk.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "opentelemetry"
+			}
+		},
+		{
+			"Key": "telemetry.sdk.version",
+			"Value": {
+				"Type": "STRING",
+				"Value": "1.3.0"
+			}
+		}
+	],
+	"InstrumentationLibrary": {
+		"Name": "opentelemetry-example",
+		"Version": "",
+		"SchemaURL": ""
+	}
+}
+{
+	"Name": "Run",
+	"SpanContext": {
+		"TraceID": "69c504420b5066edbf3aa1c4384b3083",
+		"SpanID": "899a5cf84716e383",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "69c504420b5066edbf3aa1c4384b3083",
+		"SpanID": "0b625b98f579ab56",
+		"TraceFlags": "01",
 		"TraceState": "",
 		"Remote": false
 	},
